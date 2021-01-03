@@ -1,11 +1,9 @@
 const router = require('express').Router();
 
-router.get('/signup',(req,res) => {
-    res.send("signup")
-});
+const signin = require('../controller/sign/signin');
+const signup = require('../controller/sign/signup');
 
-router.get('/signin',(req,res) => {
-    res.send("signin")
-});
+router.post('/signup',signup);
+router.post('/signin',signin);
 
 module.exports = router;
